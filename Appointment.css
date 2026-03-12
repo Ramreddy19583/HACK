@@ -1,50 +1,255 @@
 :root {
-    --primary: #2c3e50;
-    --accent: #3498db;
-    --light: #f4f7f6;
+    --primary: #1e3a8a;
+    --accent: #3b82f6;
+    --light: #f4f7fb;
     --white: #ffffff;
-    --success: #27ae60;
+    --success: #10b981;
 }
+
+/* BODY */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: var(--light);
-    color: var(--primary);
+    background: linear-gradient(135deg,#f4f7fb,#e8f0ff);
+    color: #333;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents unwanted horizontal scrolls */
+
 }
 
-/* --- Navigation --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     padding: 1rem 5%;
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent);
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:var(--accent);
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+.nav-links{
+    display:flex;
+    gap:20px;
+    list-style:none;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 500;
+.nav-links a{
+    text-decoration:none;
+    font-weight:500;
+    color:#333;
 }
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+
+.title{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.title h1{
+    font-size:38px;
+    color:var(--primary);
+}
+
+.title h2{
+    color:#555;
+}
+
+/* APPOINTMENT FORM */
+
+.form{
+    width:90%;
+    max-width:750px;
+    margin:auto;
+    padding:40px;
+    border-radius:15px;
+
+    background:white;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.form:hover{
+    transform:translateY(-5px);
+}
+
+.form h1{
+    color:var(--primary);
+}
+
+/* INPUTS */
+
+.form input,
+.form select{
+
+    width:100%;
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    font-size:15px;
+
+    margin-bottom:15px;
+
+    transition:0.2s;
+}
+
+.form input:focus,
+.form select:focus{
+
+    outline:none;
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 5px rgba(59,130,246,0.4);
+}
+
+/* BUTTON */
+
+.form input[type=submit]{
+
+    background:linear-gradient(135deg,#3b82f6,#1e3a8a);
+
+    color:white;
+
+    border:none;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.form input[type=submit]:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+
+}
+
+/* SPECIALIST SECTION */
+
+.product{
+
+    padding:60px 5%;
+
+    text-align:center;
+
+}
+
+.product h1{
+
+    font-size:30px;
+
+    color:var(--primary);
+
+}
+
+.product h2{
+
+    color:#666;
+
+}
+
+/* DOCTOR CARDS */
+
+.product1,
+.product2{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+/* CARD */
+
+.item,
+.item1{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+
+}
+
+.item:hover,
+.item1:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+/* DOCTOR IMAGE */
+
+.item img,
+.item1 img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:10px;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:60px;
+
+}
+
+/* MOBILE */
 .dropdown { position: relative; }
 .dropdown-content {
     display: none;
@@ -59,129 +264,43 @@ body {
     display: block;
 }
 .dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a:hover { background-color: var(--light); }   
 
-
-/* --- Hero/Title Section --- */
-.title {
-    text-align: center;
-    padding: 40px 20px;
-    color: #3498db; /* Adjusted for better visibility */
+.hamburger { 
+    display: none; 
+    cursor: pointer; 
+    font-size: 1.8rem; 
+    color: var(--primary);
 }
 
-.title h1 { font-size: clamp(1.5rem, 5vw, 2.8rem); margin-bottom: 10px; }
-.title h2 { font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 400; }
+@media(max-width:768px){
 
-/* --- Appointment Form (Fixed for Responsiveness) --- */
-.form {
-    width: 90%;            /* Responsive width */
-    max-width: 800px;      /* Limits size on big screens */
-    margin: 20px auto;     /* Centers the form */
-    padding: 30px 20px;
-    border-radius: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    background-color: var(--white);
-    text-align: center;
+.nav-links{
+
+display:none;
+
+flex-direction:column;
+
+position:absolute;
+
+top:60px;
+
+right:0;
+
+background:white;
+
+width:100%;
+
+text-align:center;
+
 }
 
-.form input[type=text], 
-.form input[type=email], 
-.form input[type=tel], 
-.form input[type=date],
-.form input[type=time],
-.form select {
-    width: 100%;           /* Takes full container width */
-    max-width: 600px;
-    height: 40px;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
-    font-size: 16px;
-    padding: 0 10px;
-    box-sizing: border-box; /* Crucial for padding */
+.nav-links.active{
+display:flex;
 }
 
-.form input[type=submit] {
-    width: 200px;
-    height: 45px;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: var(--primary);
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
+.hamburger{
+display:block;
+font-size:25px;
 }
 
-/* --- Specialist/Product Grid --- */
-.product {
-    width: 100%;
-    padding: 20px 5%;
-    box-sizing: border-box;
-}
-
-.product1, .product2 {
-    display: grid;
-    /* This line creates the magic: items wrap automatically */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.item, .item1 {
-    background: var(--white);
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 1rem;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.item:hover, .item1:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.item img, .item1 img {
-    width: 150px;      /* Consistent size */
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-/* --- Footer --- */
-.footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-
-/* --- Responsive Media Queries --- */
-.hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--white);
-        width: 100%;
-        padding: 1rem 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    
-    .nav-links.active { display: flex; }
-    .hamburger { display: block; }
-    
-    .form { width: 95%; }
-    
-    .product1, .product2 {
-        grid-template-columns: 1fr; /* Single column on small phones */
-    }
 }
